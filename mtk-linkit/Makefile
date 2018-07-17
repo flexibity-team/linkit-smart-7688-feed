@@ -11,20 +11,27 @@ include $(INCLUDE_DIR)/package.mk
 define Package/mtk-linkit
 	TITLE:=MTK LinkIt Smart board support package
 	DEPENDS:=@TARGET_ramips_mt76x8_DEVICE_LinkIt7688 \
-		+gdbserver +curl +strace +coreutils +coreutils-stty \
+		+gdbserver +curl +strace +coreutils \
 		+avahi-nodbus-daemon +mjpg-streamer +blockd \
-		+uhttpd +rpcd +rpcd-mod-iwinfo  +git +git-http +samba36-server \
+		+uhttpd +rpcd +git +git-http +samba36-server \
 		+python +python-pyserial +python-pip +hidapi \
-		+node +node-hid +node-cylon-firmata +yunbridge \
+		+yunbridge \
 		+luci +luci-theme-openwrt +luci-app-mjpg-streamer +luci-app-samba +luci-lib-json \
-		+rpcd-mod-rpcsys +cgi-io +avrdude +spi-tools +uboot-envtools \
-		+kmod-fs-vfat +kmod-fs-exfat +kmod-i2c-core \
+		+cgi-io +avrdude +spi-tools +uboot-envtools \
+		+kmod-fs-vfat +kmod-i2c-core \
 		+kmod-nls-base +kmod-nls-cp437 +kmod-nls-iso8859-1 \
 		+kmod-nls-iso8859-15 +kmod-nls-iso8859-2 +kmod-nls-utf8 \
 		+kmod-sdhci-mt7620 +kmod-usb-storage \
-		+kmod-video-core +kmod-video-uvc \
-		+kmod-sound-core +kmod-sound-mt7620 +madplay-alsa +alsa-utils \
+		+kmod-video-core \
+		+kmod-sound-core +madplay-alsa +alsa-utils \
 		+tcpdump-mini +@KERNEL_DEVMEM +mtk-linkit-webui
+		#+kmod-sound-mt7620
+		#+kmod-video-uvc
+		#+kmod-fs-exfat
+		#+rpcd-mod-rpcsys
+		#+node +node-hid +node-cylon-firmata
+		#+rpcd-mod-iwinfo
+		#+coreutils-stty
 		#+libmraa +libupm 
 		#+kmod-sound-mtk
 		#+mtk-sdk-wifi
