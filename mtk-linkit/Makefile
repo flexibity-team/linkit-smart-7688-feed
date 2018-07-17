@@ -9,7 +9,7 @@ PKG_RELEASE:=1
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mtk-linkit
-	TITLE:=MTK LinkIt Smart board support package
+	TITLE:=LinkIt Smart board support package
 	DEPENDS:=@TARGET_ramips_mt76x8_DEVICE_LinkIt7688 \
 		+gdbserver +curl +strace +coreutils \
 		+avahi-nodbus-daemon +mjpg-streamer +blockd \
@@ -24,7 +24,8 @@ define Package/mtk-linkit
 		+kmod-sdhci-mt7620 +kmod-usb-storage \
 		+kmod-video-core \
 		+kmod-sound-core +madplay-alsa +alsa-utils \
-		+tcpdump-mini +@KERNEL_DEVMEM +mtk-linkit-webui
+		+tcpdump-mini +@KERNEL_DEVMEM
+		#+mtk-linkit-webui
 		#+kmod-sound-mt7620
 		#+kmod-video-uvc
 		#+kmod-fs-exfat
