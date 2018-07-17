@@ -41,7 +41,7 @@ In the Debian system, open the *Terminal* application and type the following com
 5. Update the feed information of all available packages for building the firmware:
     
     ```
-    $ ./scripts/feeds update
+    $ ./scripts/feeds update -a
     ```
 6. Install all packages:
     
