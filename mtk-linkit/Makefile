@@ -15,20 +15,15 @@ define Package/mtk-linkit
 		+avahi-nodbus-daemon +blockd \
 		+uhttpd +rpcd +rpcd-mod-rpcsys +rpcd-mod-iwinfo +coreutils-stty\
 		+hidapi +yunbridge \
-		+luci +luci-theme-openwrt +luci-app-mjpg-streamer +luci-app-samba +luci-lib-json \
-		+cgi-io +avrdude +spi-tools +uboot-envtools \
+		+luci +luci-theme-openwrt +luci-lib-json \
+		+cgi-io +spi-tools +uboot-envtools \
 		+kmod-fs-vfat +kmod-i2c-core \
 		+kmod-nls-base +kmod-nls-cp437 +kmod-nls-iso8859-1 \
 		+kmod-nls-iso8859-15 +kmod-nls-iso8859-2 +kmod-nls-utf8 \
-		+kmod-sdhci-mt7620 +kmod-usb-storage \
+		+kmod-usb-storage \
 		+tcpdump-mini +@KERNEL_DEVMEM
 		#+mtk-linkit-webui
-		#+kmod-sound-mt7620
-		#+kmod-video-uvc
 		#+kmod-fs-exfat
-		#+node +node-hid +node-cylon-firmata
-		#+libmraa +libupm 
-		#+kmod-sound-mtk
 	DEFAULT:=y
 endef
 
