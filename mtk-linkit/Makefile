@@ -14,7 +14,7 @@ define Package/mtk-linkit
 		+gdbserver +curl +strace +coreutils \
 		+avahi-nodbus-daemon +blockd \
 		+uhttpd +rpcd +rpcd-mod-rpcsys +rpcd-mod-iwinfo +coreutils-stty\
-		+hidapi +yunbridge \
+		+hidapi +usbutils\
 		+luci +luci-theme-openwrt +luci-lib-json \
 		+cgi-io +spi-tools +uboot-envtools \
 		+kmod-fs-vfat +kmod-i2c-core \
