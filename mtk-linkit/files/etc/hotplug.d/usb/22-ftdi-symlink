@@ -1,0 +1,23 @@
+# Description: Action executed on boot (bind) and with the system on the fly
+#logger -t hotplug "Checking device ${PRODUCT}"
+#FTDI_PROD="403/6011"
+if [ "${ACTION}" = "bind" ] ; then
+  case "${PRODUCT}" in
+    403*) # FTDI modules product id prefix
+      DEVICE_NAME="$(ls /sys/${DEVPATH} | grep tty)"
+      if [ "${DEVICE_NAME}" != "" ]; then
+        logger -t hotplug "Linking ${DEVICE_NAME} -> ${DEVICENAME}"
+        ln -s /dev/${DEVICE_NAME} /dev/tty${DEVICENAME}
+      fi
+    ;;
+  esac
+fi
+# Action to remove the symlinks
+if [ "${ACTION}" = "remove" ]  ; then
+  case "${PRODUCT}" in
+    403*)  # FTDI product id prefix
+      logger -t hotplug "Removing ${DEVICENAME}"
+      rm /dev/tty${DEVICENAME}
+    ;;
+  esac
+fi
