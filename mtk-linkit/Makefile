@@ -14,7 +14,7 @@ define Package/mtk-linkit
 		+gdbserver +curl +strace +coreutils \
 		+avahi-nodbus-daemon +blockd \
 		+uhttpd +rpcd +rpcd-mod-rpcsys +rpcd-mod-iwinfo +coreutils-stty\
-		+hidapi +usbutils\
+		+hidapi +stm32flash +kmod-usb-serial +kmod-usb-serial-ftdi +usbutils\
 		+luci +luci-theme-openwrt +luci-lib-json \
 		+cgi-io +spi-tools +uboot-envtools \
 		+kmod-fs-vfat +kmod-i2c-core \
@@ -22,8 +22,6 @@ define Package/mtk-linkit
 		+kmod-nls-iso8859-15 +kmod-nls-iso8859-2 +kmod-nls-utf8 \
 		+kmod-usb-storage \
 		+tcpdump-mini +@KERNEL_DEVMEM
-		#+mtk-linkit-webui
-		#+kmod-fs-exfat
 	DEFAULT:=y
 endef
 
