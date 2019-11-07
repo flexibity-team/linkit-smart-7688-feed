@@ -19,39 +19,39 @@ In the Debian system, open the *Terminal* application and type the following com
 
 1. Install prerequisite packages for building the firmware:
     ```
-    $ sudo apt-get install git g++ make libncurses5-dev subversion libssl-dev gawk libxml-parser-perl unzip wget python xz-utils
+    sudo apt-get install git g++ make libncurses5-dev subversion libssl-dev gawk libxml-parser-perl unzip wget python xz-utils
     ```
 
 2. Download OpenWrt CC source codes:
     ```
-    $ git clone https://git.openwrt.org/openwrt/openwrt.git/ -b openwrt-18.06
+    git clone https://git.openwrt.org/openwrt/openwrt.git/ -b openwrt-18.06
     ```
     
 3. Prepare the default configuration file for feeds:
     ```
-    $ cd openwrt
-    $ cp feeds.conf.default feeds.conf
+    cd openwrt
+    cp feeds.conf.default feeds.conf
     ```
     
 4. Add the LinkIt Smart 7688 feed:
     
     ```
-    $ echo src-git linkit https://github.com/Kenzu/linkit-smart-7688-feed.git >> feeds.conf
+    echo src-git linkit https://github.com/flexibity-team/linkit-smart-7688-feed.git >> feeds.conf
     ```
 5. Update the feed information of all available packages for building the firmware:
     
     ```
-    $ ./scripts/feeds update -a
+    ./scripts/feeds update -a
     ```
 6. Install all packages:
     
     ```
-    $ ./scripts/feeds install -a
+    ./scripts/feeds install -a
     ```
 7. Prepare the kernel configuration to inform OpenWrt that we want to build an firmware for LinkIt Smart 7688:
     
     ```
-    $ make menuconfig
+    make menuconfig
     ```
     * Select the options as below:
         * Target System: `MediaTek Ralink MIPS`
@@ -61,7 +61,7 @@ In the Debian system, open the *Terminal* application and type the following com
 8. Start the compilation process:
     
     ```
-    $ make V=99
+    make -j V=99
     ```
 9. After the build process completes, the resulted firmware file will be under `bin/targets/ramips/mt76x8/openwrt-ramips-mt76x8-LinkIt7688-squashfs-sysupgrade.bin`. Depending on the H/W resources of the host environment, the build process may **take more than 2 hours**.
 
